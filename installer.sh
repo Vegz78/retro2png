@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # 1. Install dependencies
 sudo apt update
 sudo apt install -y libpng-dev git-core triggerhappy
