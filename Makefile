@@ -1,5 +1,8 @@
-OBJS=raspi2png.o
-BIN=raspi2png
+//CC=clang
+//-fsanitize=address
+
+OBJS=retro2png.o
+BIN=retro2png
 
 CFLAGS+=-Wall -g -O3 $(shell libpng-config --cflags)
 LDFLAGS+=-L/opt/vc/lib/ -lbcm_host $(shell libpng-config --ldflags) -lm
@@ -10,7 +13,7 @@ all: $(BIN)
 
 install: $(BIN)
 	install -d -m 755 $(DESTDIR)/usr/bin/
-	install -m 755 $(BIN) $(DESTDIR)/usr/bin/raspi2png
+	install -m 755 $(BIN) $(DESTDIR)/usr/bin/retro2png
 
 %.o: %.c
 	@rm -f $@ 
