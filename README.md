@@ -34,7 +34,7 @@ Due to some missing libraries and certificates, tested on fresh Blast 16 v.1.0.1
 
 ## Manual Building and Installing
 
-You will need to install libpng before you build the program. On Raspbian
+You will need to install libpng before you build the program. On Raspbian.
 
 ```
 # 1. Install dependencies
