@@ -4,7 +4,7 @@ Utility to take a snapshot of the Raspberry Pi screen and save it as a PNG file.
 
 Updated to:
 - save to default "~/Pictures" folder with up to 99 auto-incremented standard "snapshot_X.png" file names
-- trigger with keyboard hotkey combination "r+2+p" and controller hotkey combination "Mode/PS+DPAD_UP" in RetroPie etc.
+- trigger with keyboard hotkey combination "r+2+p" and controller hotkey combination "Mode/PS+DPAD_UP" in RetroPie, Recalbox, Blast16, X11, console etc.
 
 ```
     Usage: raspi2png [dirname] [--pngname name] [--width <width>] [--height <height>] [--compression <level>] [--delay <delay>] [--display <number>] [--stdout] [--help]
