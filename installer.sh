@@ -5,7 +5,7 @@ sudo apt update&&sudo apt-get -y install libpng-dev git-core triggerhappy
 
 # 2. Clone git to home folder
 cd ~
-#git clone https://github.com/Vegz78/retro2png.git
+git clone https://github.com/Vegz78/retro2png.git
 cd retro2png
 
 # 3. Compile and install retro2png
