@@ -1,4 +1,4 @@
-//-------------------------------------------------------------------------
+ //-------------------------------------------------------------------------
 //
 // The MIT License (MIT)
 //
@@ -36,6 +36,11 @@
 #include <string.h>
 #include <unistd.h>
 #include <zlib.h>
+#include <dirent.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <unistd.h>
+
 
 #include "bcm_host.h"
 
@@ -50,17 +55,56 @@
 #define DEFAULT_DELAY 0
 #define DEFAULT_DISPLAY_NUMBER 0
 #define DEFAULT_NAME "snapshot.png"
+#define DEFAULT_DIR "/home/pi/Pictures"
 
 //-----------------------------------------------------------------------
 
 const char* program = NULL;
+static char fileNames[100][256];
 
 //-----------------------------------------------------------------------
+
+
+// Function that counts the number of occurences of the standard snapshot.png name in iputDir
+int noOfOccurences(char inputDir[])
+{
+    DIR *dp = NULL;
+    struct dirent *dptr = NULL;
+	int noOfSnapshots = 0;
+ 
+    // Open the directory stream
+    if(NULL == (dp = opendir(inputDir)) )
+    {
+        printf("\n Cannot open Input directory [%s]\n",inputDir);
+        exit(EXIT_FAILURE);
+    }
+    else
+    {
+        // Read the directory contents and count occurences of snapshot.png
+        while(NULL != (dptr = readdir(dp)) ) 
+        {
+	    	if(strcmp(dptr->d_name, "snapshot.png") == 0 || (strstr(dptr->d_name, "snapshot_") != NULL && strstr(dptr->d_name, ".png") != NULL))
+		    {
+                strcpy(fileNames[noOfSnapshots], dptr->d_name);
+                noOfSnapshots++;
+                if(noOfSnapshots >= 100)
+                {
+                    printf("The limit of 99 snapshots in %s is exceeded, please clean up!...\n", inputDir);
+                    exit(EXIT_FAILURE);
+                }
+            }
+	    }
+	    closedir(dp);
+    }
+    return noOfSnapshots;
+}
+
 
 void
 usage(void)
 {
     fprintf(stderr, "Usage: %s [--pngname name]", program);
+    fprintf(stderr, " [dirname]");
     fprintf(stderr, " [--width <width>] [--height <height>]");
     fprintf(stderr, " [--compression <level>]");
     fprintf(stderr, " [--delay <delay>] [--display <number>]");
@@ -68,7 +112,10 @@ usage(void)
 
     fprintf(stderr, "\n");
 
-    fprintf(stderr, "    --pngname,-p - name of png file to create ");
+    fprintf(stderr, "    dirname - path of png file to create ");
+    fprintf(stderr, "(default is %s)\n", DEFAULT_DIR);
+
+    fprintf(stderr, "    --pngname,-p - path and/or name of png file to create ");
     fprintf(stderr, "(default is %s)\n", DEFAULT_NAME);
 
     fprintf(stderr, "    --height,-h - image height ");
@@ -104,12 +151,19 @@ main(
     int opt = 0;
 
     bool writeToStdout = false;
-    char *pngName = DEFAULT_NAME;
+//    char *pngName = DEFAULT_NAME;
+    char pngName[2048] = "";
+    strcpy(pngName,DEFAULT_NAME);
     int32_t requestedWidth = 0;
     int32_t requestedHeight = 0;
     uint32_t displayNumber = DEFAULT_DISPLAY_NUMBER;
     int compression = Z_DEFAULT_COMPRESSION;
     int delay = DEFAULT_DELAY;
+
+    //char *dirName = DEFAULT_DIR;
+    char dirName[1024] = "";
+    strcpy(dirName, DEFAULT_DIR);
+    bool pngNameSetWithP = false;
 
     VC_IMAGE_TYPE_T imageType = VC_IMAGE_RGBA32;
     int8_t dmxBytesPerPixel  = 4;
@@ -135,8 +189,10 @@ main(
         { NULL, no_argument, NULL, 0 }
     };
 
+
     while ((opt = getopt_long(argc, argv, sopts, lopts, NULL)) != -1)
     {
+        
         switch (opt)
         {
         case 'c':
@@ -167,7 +223,9 @@ main(
 
         case 'p':
 
-            pngName = optarg;
+            strcpy(pngName, optarg);
+            //pngName = optarg;
+            pngNameSetWithP = true;
             break;
 
         case 'w':
@@ -197,6 +255,84 @@ main(
             break;
         }
     }
+
+
+    // Loop arguments again to find first optional argument, which is treated like a directory
+    optind = 0;
+    while ((opt = getopt_long(argc, argv, sopts, lopts, NULL)) != -1){}
+        for (int index = optind; index < argc; index++)
+        {
+            if(index == optind)
+            {
+                strcpy(dirName, argv[index]);
+                pngNameSetWithP = false;
+                break;
+            }
+        }
+
+
+    // Set new default file name in /home/pi/Pictures directory and incremental name based on number of and after the highest occurences
+	if(!pngNameSetWithP)
+    {
+        int noOfSnapshots = noOfOccurences(dirName);
+        if (noOfSnapshots == 0)
+        {
+            if (strcmp(&dirName[strlen(dirName)-1], "/"))
+            {
+                //pngName = strcat(strcat(dirName, "/"), DEFAULT_NAME);
+                strcpy(pngName, strcat(strcat(dirName, "/"), DEFAULT_NAME));
+            }
+            else
+            {
+                //pngName = strcat(dirName, DEFAULT_NAME);
+                strcpy(pngName, strcat(dirName, DEFAULT_NAME));
+            }
+        }
+        else
+        {
+            char *startPos;
+            char *stopPos;
+            int highestNo = 0;
+            char tempString[256]="";
+            char tempString2[256] = "";
+            char tempString3[2048] = "";
+
+            for(int i = 0; i < noOfSnapshots; i++)
+            {
+                startPos = strrchr(fileNames[i], '_');
+                stopPos = strrchr(fileNames[i], '.');
+                if (startPos != NULL && stopPos!= NULL)
+                {
+                    strncpy(tempString, startPos+1, stopPos-startPos-1);
+
+                    if(atoi(tempString) > highestNo)
+                    {
+                     highestNo = atoi(tempString);
+                    }
+                memset(tempString, 0, sizeof(tempString));
+                }
+            }
+            highestNo++;
+
+            stopPos = strrchr(DEFAULT_NAME, '.');
+            strncpy(tempString, DEFAULT_NAME, stopPos-DEFAULT_NAME);
+            strncpy(tempString2, stopPos, strlen(DEFAULT_NAME-(stopPos-DEFAULT_NAME)));
+
+            if (strcmp(&dirName[strlen(dirName)-1], "/"))
+            {
+                snprintf(tempString3, 2000, "%s/%s%s%i%s", dirName, tempString, "_", highestNo, tempString2);
+            }
+            else
+            {
+                snprintf(tempString3, 2000, "%s%s%s%i%s", dirName, tempString, "_", highestNo, tempString2);
+            }
+
+            strcpy(pngName, tempString3);
+            //pngName = tempString3;
+        }
+        pngName[strlen(pngName)+1] = '\0';
+    }
+
 
     //-------------------------------------------------------------------
 
@@ -523,7 +659,7 @@ main(
     else
     {
         pngfp = fopen(pngName, "wb");
-
+//        printf("Writing: %s\n", pngName);
         if (pngfp == NULL)
         {
             fprintf(stderr,
