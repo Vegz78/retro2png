@@ -31,7 +31,8 @@ You will need to install libpng before you build the program. On Raspbian
 
 ```
 # 1. Install dependencies
-sudo apt update&&sudo apt-get -y install libpng-dev git-core triggerhappy
+sudo apt update
+sudo apt install -y libpng-dev git-core triggerhappy
 
 # 2. Clone git to home folder
 cd ~
@@ -55,6 +56,7 @@ sudo systemctl status triggerhappy.service  #From this you can check if the trig
 # 5. Clean up
 cd ..
 rm -fr retro2png
-retro2png -H```
+retro2png -H
+```
 
 
