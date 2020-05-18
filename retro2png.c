@@ -103,8 +103,8 @@ int noOfOccurences(char inputDir[])
 void
 usage(void)
 {
-    fprintf(stderr, "Usage: %s [--pngname name]", program);
-    fprintf(stderr, " [dirname]");
+    fprintf(stderr, "Usage: %s [dirname]", program);
+    fprintf(stderr, " [--pngname name]");
     fprintf(stderr, " [--width <width>] [--height <height>]");
     fprintf(stderr, " [--compression <level>]");
     fprintf(stderr, " [--delay <delay>] [--display <number>]");
