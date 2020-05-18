@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # 1. Install dependencies
-sudo apt update&&sudo apt-get -y install libpng-dev git-core triggerhappy
+sudo apt update
+sudo apt install -y libpng-dev git-core triggerhappy
 
 # 2. Clone git to home folder
 cd ~
