@@ -27,6 +27,9 @@ Run this command through terminal or CLI screen on most systems.
 
 ## Special Install for Blast16
 
+Due to some missing libraries and certificates, tested on fresh Blast 16 v.1.0.18.
+ESC key to get to terminal from Blast16 to run this command.
+
 ```wget --no-check-certificate https://raw.githubusercontent.com/Vegz78/retro2png/master/installer_blast16.sh&&chmod +x ./installer_blast16.sh&&./installer_blast16.sh```
 
 ## Manual Building and Installing
