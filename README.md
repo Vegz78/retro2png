@@ -27,7 +27,7 @@ Run this command through terminal or CLI screen on most systems.
 
 ## Special Install for Blast16
 
-```wget --no-check-certificate https://raw.githubusercontent.com/Vegz78/retro2png/master/installer_blast16.sh&&chmod +x installer_blast16.sh&&./installer_blast16.sh```
+```wget --no-check-certificate https://raw.githubusercontent.com/Vegz78/retro2png/master/installer_blast16.sh&&chmod +x ./installer_blast16.sh&&./installer_blast16.sh```
 
 ## Manual Building and Installing
 
