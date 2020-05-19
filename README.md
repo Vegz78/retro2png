@@ -27,7 +27,8 @@ Many thanks to Andrew Duncan and Stefan Tomanek for their great utilities [raspi
     --display,-D - Raspberry Pi display number (default 0)
 	--stdout,-s - write file to stdout
     --help,-H - print this usage information
-```<br>
+```
+<br>
 ## Simple Install
 
 Run this command through terminal or CLI screen on most systems.
