@@ -34,16 +34,23 @@ Run this command through terminal or CLI screen on most systems.
 
 ```curl -sL https://raw.githubusercontent.com/Vegz78/retro2png/master/installer.sh | bash -```
 
-## Special Install for Blast16
+## Special Simple Install for Blast16
 
 Due to some missing libraries and certificates, tested on fresh Blast 16 v.1.0.18.
 <br>ESC key to get to terminal from Blast16 to run this command.
 
 ```wget --no-check-certificate https://raw.githubusercontent.com/Vegz78/retro2png/master/installer_blast16.sh&&chmod +x ./installer_blast16.sh&&./installer_blast16.sh```
 
+## Configuring the Gamepad and Keyboard Hotkeys
+- To observe gamepad and keyboard button/key press codes, run(exit with CTRL+C):
+```thd --dump /dev/input/event*```
+- Edit(sudo) the file /etc/triggerhappy/triggers.d/retro2png.conf, example:
+```
+
+
 ## Manual Building and Installing
 
-You will need to install libpng before you build the program. On Raspbian.
+You will need to install libpng before you build the program. On Raspbian:
 
 ```
 # 1. Install dependencies
