@@ -6,7 +6,7 @@ Many thanks to Andrew Duncan and Stefan Tomanek for their great utilities [raspi
 
 ## New Features
 - Saves default to the "~/Pictures" folder
-- Triggered with fully configurable keyboard and game controller hotkey combinations, as well as from the command line
+- Triggered by keyboard and game controller hotkey combinations, as well as from the command line
 - Up to 99 auto-incremented standard "snapshot_X.png" file names in all specified save folders
 - Save folder easiliy specified anywhere behind the ```retro2png``` command without need of flags, or together with other flags
 - Keyboard and game controller hotkeys are fully and easily configurable, and works from most applications and user interfaces 
