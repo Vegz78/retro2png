@@ -43,11 +43,12 @@ Due to some missing libraries and certificates, tested on fresh Blast 16 v.1.0.1
 
 ```wget --no-check-certificate https://raw.githubusercontent.com/Vegz78/retro2png/master/installer_blast16.sh&&chmod +x ./installer_blast16.sh&&./installer_blast16.sh```
 <br>
+
 ## Configuring the Gamepad and Keyboard Hotkeys
 - To observe gamepad and keyboard button/key press codes, run(exit with CTRL+C):
 ```thd --dump /dev/input/event*```
-- Edit(sudo) the file /etc/triggerhappy/triggers.d/retro2png.conf, example:
-<br>(key/btn combo, press/hold, command - tab-delimited):
+- Edit(sudo) the file /etc/triggerhappy/triggers.d/retro2png.conf, example(tab-delimited):
+<br>(key/btn combo, press/hold, command):
 ```
 KEY_P+KEY_2+KEY_R	1	/usr/bin/retro2png
 BTN_DPAD_UP+BTN_MODE	1	/usr/bin/retro2png
@@ -59,6 +60,7 @@ BTN_DPAD_UP+BTN_MODE	1	/usr/bin/retro2png
 - After changes, update the service with: ```sudo systemctl daemon-reload```
 - Restart service with: ```sudo systemctl restart triggerhappy.service```
 <br>
+
 ## Manual Building and Installing
 
 You will need to install libpng before you build the program. On Raspbian:
