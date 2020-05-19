@@ -58,7 +58,7 @@ BTN_DPAD_UP+BTN_MODE	1	/usr/bin/retro2png
   - 0 = release, 1 = press and 2 = hold
   - the user running the process must have permissions to the command(default:pi/$USER, configured in file /lib/systemd/system/triggerhappy.service)
 - After changes, update the service with: ```sudo systemctl daemon-reload```
-- Restart service with: ```sudo systemctl restart triggerhappy.service```
+- Restart service with: ```sudo systemctl restart triggerhappy.service```<br>
 
 ## Manual Building and Installing
 
