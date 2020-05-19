@@ -56,7 +56,7 @@ BTN_DPAD_UP+BTN_MODE	1	/usr/bin/retro2png
 - , where:
   - key/btn combos are entered in conf file in opposite sequence of intended operating sequence, and up to 5 button combos per line
   - 0 = release, 1 = press and 2 = hold
-  - the user running the process must have correct permissions for the command(default:pi/$USER, configured in file /lib/systemd/system/triggerhappy.service). Other commands may also be configured here.
+  - the user running the process must have correct permissions for the command(default:pi/$USER, configured in file /lib/systemd/system/triggerhappy.service). Other commands may also be configured here
 - After changes, update the service with: ```sudo systemctl daemon-reload```
 - Restart service with: ```sudo systemctl restart triggerhappy.service```<br>
 
