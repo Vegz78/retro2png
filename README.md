@@ -50,7 +50,7 @@ KEY_P+KEY_2+KEY_R	1	/usr/bin/retro2png
 BTN_DPAD_UP+BTN_MODE	1	/usr/bin/retro2png
 ```
 , where:
-     - key/btn combos are entered 
+        - key/btn combos are entered 
 - Update the 
 ## Manual Building and Installing
 
