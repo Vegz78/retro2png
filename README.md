@@ -32,14 +32,14 @@ Many thanks to Andrew Duncan and Stefan Tomanek for their great utilities [raspi
 
 ## Simple Install
 
-Run this command through terminal or CLI screen on most systems.
+Run this command wihtout sudo through terminal or CLI screen on most systems.
 
 ```curl -sL https://raw.githubusercontent.com/Vegz78/retro2png/master/installer.sh | bash -```
 
-## Special Simple Install for Blast16
+## Special Simple Install for Blast16&SNESES
 
 Due to some missing libraries and certificates, tested on fresh Blast 16 v.1.0.18.
-<br>ESC key to get to terminal from Blast16 to run this command.
+<br>ESC key to get to terminal from Blast16 to run this command without sudo.
 
 ```wget --no-check-certificate https://raw.githubusercontent.com/Vegz78/retro2png/master/installer_blast16.sh&&chmod +x ./installer_blast16.sh&&./installer_blast16.sh```
 <br><br>
