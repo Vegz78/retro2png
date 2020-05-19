@@ -44,12 +44,19 @@ Due to some missing libraries and certificates, tested on fresh Blast 16 v.1.0.1
 ## Configuring the Gamepad and Keyboard Hotkeys
 - To observe gamepad and keyboard button/key press codes, run(exit with CTRL+C):
 ```thd --dump /dev/input/event*```
-- Edit(sudo) the file /etc/triggerhappy/triggers.d/retro2png.conf, example(key/btn combo, press/hold, command - tab-delimited):```
+- Edit(sudo) the file /etc/triggerhappy/triggers.d/retro2png.conf, example:
+(key/btn combo, press/hold, command - tab-delimited):
+```
 KEY_P+KEY_2+KEY_R	1	/usr/bin/retro2png
-BTN_DPAD_UP+BTN_MODE	1	/usr/bin/retro2png```
-  - Second
-    - key/btn combos are entered 
-- Update the 
+BTN_DPAD_UP+BTN_MODE	1	/usr/bin/retro2png
+```
+- , where:
+  - key/btn combos are entered in conf file in opposite sequence of intended operating sequence, and up to 5 button combos per line
+  - 0 = release, 1 = press and 2 = hold
+  - the user running the process must have permissions to the command(default:pi/$USER, configured in file /lib/systemd/system/triggerhappy.service)
+- After changes, update the service with: ```sudo systemctl daemon-reload```
+- Restart service with: ```sudo systemctl restart triggerhappy.service```
+
 ## Manual Building and Installing
 
 You will need to install libpng before you build the program. On Raspbian:
