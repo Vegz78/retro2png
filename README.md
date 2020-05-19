@@ -25,7 +25,7 @@ Many thanks to Andrew Duncan and Stefan Tomanek for their great utilities [raspi
     --compression,-c - PNG compression level (0 - 9)
     --delay,-d - delay in seconds (default 0)
     --display,-D - Raspberry Pi display number (default 0)
-	--stdout,-s - write file to stdout
+    --stdout,-s - write file to stdout
     --help,-H - print this usage information
 ```
 <br>
