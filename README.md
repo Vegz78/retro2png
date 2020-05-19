@@ -62,7 +62,7 @@ BTN_DPAD_UP+BTN_MODE	1	/usr/bin/retro2png
 
 ## Manual Building and Installing
 
-You will need to install libpng before you build the program. On Raspbian:
+You will need to install libpng-dev before you build the program. On Raspbian:
 
 ```
 # 1. Install dependencies
