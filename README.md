@@ -27,7 +27,7 @@ Many thanks to Andrew Duncan and Stefan Tomanek for their great utilities [raspi
     --display,-D - Raspberry Pi display number (default 0)
 	--stdout,-s - write file to stdout
     --help,-H - print this usage information
-```
+```<br>
 ## Simple Install
 
 Run this command through terminal or CLI screen on most systems.
@@ -40,12 +40,12 @@ Due to some missing libraries and certificates, tested on fresh Blast 16 v.1.0.1
 <br>ESC key to get to terminal from Blast16 to run this command.
 
 ```wget --no-check-certificate https://raw.githubusercontent.com/Vegz78/retro2png/master/installer_blast16.sh&&chmod +x ./installer_blast16.sh&&./installer_blast16.sh```
-
+<br>
 ## Configuring the Gamepad and Keyboard Hotkeys
 - To observe gamepad and keyboard button/key press codes, run(exit with CTRL+C):
 ```thd --dump /dev/input/event*```
 - Edit(sudo) the file /etc/triggerhappy/triggers.d/retro2png.conf, example:
-(key/btn combo, press/hold, command - tab-delimited):
+<br>(key/btn combo, press/hold, command - tab-delimited):
 ```
 KEY_P+KEY_2+KEY_R	1	/usr/bin/retro2png
 BTN_DPAD_UP+BTN_MODE	1	/usr/bin/retro2png
@@ -56,7 +56,7 @@ BTN_DPAD_UP+BTN_MODE	1	/usr/bin/retro2png
   - the user running the process must have permissions to the command(default:pi/$USER, configured in file /lib/systemd/system/triggerhappy.service)
 - After changes, update the service with: ```sudo systemctl daemon-reload```
 - Restart service with: ```sudo systemctl restart triggerhappy.service```
-
+<br>
 ## Manual Building and Installing
 
 You will need to install libpng before you build the program. On Raspbian:
