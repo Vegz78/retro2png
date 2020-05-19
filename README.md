@@ -32,7 +32,7 @@ Many thanks to Andrew Duncan and Stefan Tomanek for their great utilities [raspi
 
 ## Simple Install
 
-Run this command wihtout sudo through terminal or CLI screen on most systems.
+Run this command without sudo through terminal or CLI screen on most systems.
 
 ```curl -sL https://raw.githubusercontent.com/Vegz78/retro2png/master/installer.sh | bash -```
 
