@@ -54,7 +54,7 @@
 
 #define DEFAULT_DELAY 0
 #define DEFAULT_DISPLAY_NUMBER 0
-#define DEFAULT_NAME "snapshot.png"
+#define DEFAULT_NAME "retro2png.png"
 #define DEFAULT_DIR "/home/pi/Pictures"
 
 //-----------------------------------------------------------------------
@@ -65,7 +65,7 @@ static char fileNames[100][256];
 //-----------------------------------------------------------------------
 
 
-// Function that counts the number of occurences of the standard snapshot.png name in iputDir
+// Function that counts the number of occurences of the standard retro2png.png name in iputDir
 int noOfOccurences(char inputDir[])
 {
     DIR *dp = NULL;
@@ -80,10 +80,10 @@ int noOfOccurences(char inputDir[])
     }
     else
     {
-        // Read the directory contents and count occurences of snapshot.png
+        // Read the directory contents and count occurences of retro2png.png
         while(NULL != (dptr = readdir(dp)) ) 
         {
-	    	if(strcmp(dptr->d_name, "snapshot.png") == 0 || (strstr(dptr->d_name, "snapshot_") != NULL && strstr(dptr->d_name, ".png") != NULL))
+	    	if(strcmp(dptr->d_name, "retro2png.png") == 0 || (strstr(dptr->d_name, "retro2png_") != NULL && strstr(dptr->d_name, ".png") != NULL))
 		    {
                 strcpy(fileNames[noOfSnapshots], dptr->d_name);
                 noOfSnapshots++;
