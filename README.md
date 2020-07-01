@@ -10,7 +10,7 @@ Please also check out [this article about retro2png](https://translate.google.co
 ## New Features
 - Saves default to the "~/Pictures" folder
 - Triggered by keyboard and game controller hotkey combinations, as well as from the command line
-- Up to 99 auto-incremented standard "snapshot_X.png" file names in all specified save folders
+- Up to 99 auto-incremented standard "retro2png_X.png" file names in all specified save folders
 - Save folder easiliy specified anywhere behind the ```retro2png``` command without need of flags, or together with other flags
 - Keyboard and game controller hotkeys are fully and easily configurable, and works from most applications and user interfaces 
 
@@ -22,7 +22,7 @@ Please also check out [this article about retro2png](https://translate.google.co
     Usage: raspi2png [dirname] [--pngname name] [--width <width>] [--height <height>] [--compression <level>] [--delay <delay>] [--display <number>] [--stdout] [--help]
 
     dirname - path of png file to create (default is /home/pi/Pictures)
-    --pngname,-p - path and/or name of png file to create (default is snapshot.png)
+    --pngname,-p - path and/or name of png file to create (default is retro2png.png)
     --height,-h - image height (default is screen height)
     --width,-w - image width (default is screen width)
     --compression,-c - PNG compression level (0 - 9)
