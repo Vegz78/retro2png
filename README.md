@@ -10,7 +10,7 @@ Please also check out [this article about retro2png](https://translate.google.co
 The included executable, [retro2png](https://github.com/Vegz78/retro2png/blob/master/retro2png), is compiled for Raspberry Pi 4 with Raspbian *"buster"*, but the installation scripts compile for the system it is executed on. 
 
 ## New Features
-- Saves default to the "~/Pictures" folder
+- Saves default to the "~/Pictures" folder when run with just ```retro2png``` without any command line parameters
 - Triggered by keyboard and game controller hotkey combinations, as well as from the command line
 - Up to 99 auto-incremented standard "retro2png_X.png" file names in all specified save folders
 - Save folder easily specified anywhere behind the ```retro2png``` command without need of flags, or together with other flags
