@@ -1,7 +1,7 @@
 # retro2png
 
 Utility to take snapshots of the Raspberry Pi screen and save it as PNG files. Works with keyboard and game controller hotkeys in RetroPie, Recalbox, Blast16, X11, console etc., and from the command line.
-![alt text](https://retrospill.ninja/wp-content/uploads/2020/05/retro2png_cmd.jpg)
+![alt text](https://retrospill.ninja/wp-content/uploads/2020/07/retro2png_3.jpeg)
 
 Many thanks to Andrew Duncan and Stefan Tomanek for their great utilities [raspi2png](https://github.com/AndrewFromMelbourne/raspi2png) and [Triggerhappy](https://github.com/wertarbyte/triggerhappy)!
 
@@ -99,4 +99,7 @@ rm -fr retro2png
 retro2png -H
 ```
 
-
+# Images
+![alt text](https://retrospill.ninja/wp-content/uploads/2020/06/snapshot_2.png)
+![alt text](https://retrospill.ninja/wp-content/uploads/2020/05/retro2png_cmd.jpg)
+![alt text](https://retrospill.ninja/wp-content/uploads/2020/05/snapshot_7.png)
