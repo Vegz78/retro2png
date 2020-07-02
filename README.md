@@ -7,6 +7,8 @@ Many thanks to Andrew Duncan and Stefan Tomanek for their great utilities [raspi
 
 Please also check out [this article about retro2png](https://translate.google.com/translate?hl=no&sl=no&tl=en&u=https%3A%2F%2Fretrospill.ninja%2F2020%2F05%2Fta-skjermbilde-av-blast16-sneses%2F)!
 
+The included executable, [retro2png](https://github.com/Vegz78/retro2png/blob/master/retro2png), is compiled for Raspberry Pi 4 with Raspbian *"buster"*. 
+
 ## New Features
 - Saves default to the "~/Pictures" folder
 - Triggered by keyboard and game controller hotkey combinations, as well as from the command line
