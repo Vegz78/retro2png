@@ -20,8 +20,7 @@ The included executable, [retro2png](https://github.com/Vegz78/retro2png/blob/ma
 - Default keyboard hotkey trigger combination: ```"r+2+p"```
 - Default controller hotkey trigger combination: ```"Mode/PS+DPAD_UP"```
 ([Suggestions here for better default choice of hotkey combinations are appreciated!](https://github.com/Vegz78/retro2png/issues/2)
-
-- From the command line:
+<BR>- From the command line:
 ```
     Usage: raspi2png [dirname] [--pngname name] [--width <width>] [--height <height>] [--compression <level>] [--delay <delay>] [--display <number>] [--stdout] [--help]
 
