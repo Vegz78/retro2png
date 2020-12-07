@@ -7,7 +7,7 @@ Many thanks to Andrew Duncan and Stefan Tomanek for their great utilities [raspi
 
 Please also check out [this article about retro2png](https://translate.google.com/translate?hl=no&sl=no&tl=en&u=https%3A%2F%2Fretrospill.ninja%2F2020%2F05%2Fta-skjermbilde-av-blast16-sneses%2F)!
 
-The included executable, [retro2png](https://github.com/Vegz78/retro2png/blob/master/retro2png), is compiled for Raspberry Pi 4 with Raspbian *"buster"*, but the installation scripts compile for the system it is executed on. 
+There are a couple of precompiled binaries for [download here](https://github.com/Vegz78/retro2png/tree/master/Binaries), but the simple [installation scripts](https://github.com/Vegz78/retro2png#simple-install) are recommended, because they include the hotkey functionality and compile directly for the system it is executed on. 
 
 ## New Features
 - Saves default to the "~/Pictures" folder when run with just ```retro2png``` without any command line parameters
@@ -36,13 +36,13 @@ The included executable, [retro2png](https://github.com/Vegz78/retro2png/blob/ma
 ```
 <br>
 
-## Simple Install
+## Simple Install to /usr/bin/
 
 Run this command without sudo through terminal or CLI screen on most systems.
 
 ```curl -sL https://raw.githubusercontent.com/Vegz78/retro2png/master/installer.sh | bash -```
 
-## Special Simple Install for Blast16&SNESES
+## Special Simple Install for Blast16&SNESES to /usr/bin/
 
 Due to some missing libraries and certificates, tested on fresh Blast 16 v.1.0.18.
 <br>ESC key to get to terminal from Blast16 to run this command without sudo.
