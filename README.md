@@ -1,13 +1,13 @@
 # retro2png
 
 Utility to take snapshots of the Raspberry Pi screen and save it as PNG files. Works with keyboard and game controller hotkeys in RetroPie, Recalbox, Blast16, X11, console etc., and from the command line.
-![alt text](https://retrospill.ninja/wp-content/uploads/2020/07/retro2png_3.jpeg)
+![alt text](https://retrospill.ninja/wp-content/uploads/2020/05/retro2png_cmd.jpg)
 
 Many thanks to Andrew Duncan and Stefan Tomanek for their great utilities [raspi2png](https://github.com/AndrewFromMelbourne/raspi2png) and [Triggerhappy](https://github.com/wertarbyte/triggerhappy)!
 
 Please also check out [this article about retro2png](https://translate.google.com/translate?hl=no&sl=no&tl=en&u=https%3A%2F%2Fretrospill.ninja%2F2020%2F05%2Fta-skjermbilde-av-blast16-sneses%2F)!
 
-There are a couple of precompiled binaries for [download here](https://github.com/Vegz78/retro2png/tree/master/Binaries), but the simple [installation scripts](https://github.com/Vegz78/retro2png#simple-install) are recommended, because they include the hotkey functionality and compile directly for the system it is executed on. 
+There are a couple of precompiled binaries for [download here](https://github.com/Vegz78/retro2png/tree/master/Binaries), but the simple [installation scripts](#simple-install-to-usrbin) are recommended, because they include the hotkey functionality and compile directly for the system it is executed on. 
 
 ## New Features
 - Saves default to the "~/Pictures" folder when run with just ```retro2png``` without any command line parameters
@@ -102,5 +102,4 @@ retro2png -H
 
 # Images
 ![alt text](https://retrospill.ninja/wp-content/uploads/2020/06/snapshot_2.png)
-![alt text](https://retrospill.ninja/wp-content/uploads/2020/05/retro2png_cmd.jpg)
 ![alt text](https://retrospill.ninja/wp-content/uploads/2020/05/snapshot_7.png)
