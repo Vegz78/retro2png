@@ -1,7 +1,8 @@
 # retro2png
 
 Utility to take snapshots of the Raspberry Pi screen and save it as PNG files. Works with keyboard and game controller hotkeys in RetroPie, Recalbox, Blast16, X11, console etc., and from the command line.
-![alt text](https://retrospill.ninja/wp-content/uploads/2020/05/retro2png_cmd.jpg)
+[![](docs/Screenshot_Blast16_SNESES.jpg)](https://github.com/Vegz78/retro2png/blob/master/docs/Screenshot_Blast16_SNESES.jpg?raw=true)
+(Screenshot of Blast16)
 
 Many thanks to Andrew Duncan and Stefan Tomanek for their great utilities [raspi2png](https://github.com/AndrewFromMelbourne/raspi2png) and [Triggerhappy](https://github.com/wertarbyte/triggerhappy)!
 
@@ -101,5 +102,17 @@ retro2png -H
 ```
 
 # Images
-![alt text](https://retrospill.ninja/wp-content/uploads/2020/06/snapshot_2.png)
-![alt text](https://retrospill.ninja/wp-content/uploads/2020/05/snapshot_7.png)
+[![](docs/Screenshot_RetroPie.png)](https://github.com/Vegz78/retro2png/blob/master/docs/Screenshot_RetroPie.png?raw=true)
+(Screenshot from RetroPie)
+
+[![](docs/Screenshots_RetroPie.png)](https://github.com/Vegz78/retro2png/blob/master/docs/Screenshots_RetroPie.png?raw=true)
+(In-game screenshot from RetroPie)
+
+[![](docs/Screenshot_Recalbox.png)](https://github.com/Vegz78/retro2png/blob/master/docs/Screenshot_Recalbox.png?raw=true)
+(Screenshot from Recalbox)
+
+[![](docs/Screenshot_Raspberry_Pi_Desktop.jpeg)](https://github.com/Vegz78/retro2png/blob/master/docs/Screenshot_Raspberry_Pi_Desktop.jpeg?raw=true)
+(Screenshot from Raspberry Pi Desktop)
+
+[![](docs/Screenshot_Linux_console.png)](https://github.com/Vegz78/retro2png/blob/master/docs/Screenshot_Linux_console.png?raw=true)
+(Screenshot from Raspberry Pi Linux console/CLI)
